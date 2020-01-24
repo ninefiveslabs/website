@@ -1,0 +1,10 @@
+buildjob:
+  image: cibuilds/hugo
+  script:
+    - hugo
+  artifacts:
+    paths:
+      - _landingpage
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    url: https://$CI_PROJECT_NAMESPACE.gitlab.io/-/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/_landingpage/meetup/index.html

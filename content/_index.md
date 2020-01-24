@@ -1,9 +1,13 @@
-## Front Page Content
+Nasze meetupy to spotkania na temat infrastruktury, automatyzacji, chmur i procesów wytwarzania oprogramowania.
 
-This website is powered by [GitLab Pages](https://about.gitlab.com/features/pages/)
-/ [Hugo](https://gohugo.io) and can be built in under 1 minute.
-Literally. It uses the `beautifulhugo` theme which supports content on your front page.
-Edit `/content/_index.md` to change what appears here. Delete `/content/_index.md`
-if you don't want any content here.
+Każde spotkanie składa się z:
+- głównej prezentacji: tematy w tabelce poniżej (~45 minut)
+- dyskusji, w trakcie której można porozmawiać o prezentacji, podzielić się znaleziskiem albo udostępnić ekran i pokazać coś ciekawego (~45 minut)
 
-Head over to the [GitLab project](https://gitlab.com/pages/hugo) to get started.
+Spotkania są całkowicie online, link do spotkania pojawi się w tabelce bliżej daty wydarzenia.
+
+Do dołączenia nie potrzeba żadnej rejestracji.
+
+| Numer | Data | Prezentacja | URL do spotkania |
+|------|-----|-----------|----------------|
+| 01 | 06.02.2020  19:00 |  Jenkins X: godny następca czy ostatnie tchnienie monopolisty           |  |
