@@ -1,7 +1,7 @@
 baseurl = "https://pages.gitlab.io/hugo/"
 contentdir    = "content"
 layoutdir     = "layouts"
-publishdir    = "_landingpage/meetup"
+publishdir    = "public"
 title = "Online meetup"
 canonifyurls  = true
 
