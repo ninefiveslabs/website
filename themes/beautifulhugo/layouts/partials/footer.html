@@ -30,13 +30,13 @@
 <script>
   if (window.location.hostname == 'ninefiveslabs.io') {
     var _pixel = new Image(1, 1);
-    _pixel.src = "https://stats.ninefiveslabs.io/pixel.png?u=" +
+    _pixel.src = "https://stats.ninefiveslabs.io/95l.png?u=" +
       encodeURIComponent(window.location.pathname) +
       (document.referrer ? "&r=" + encodeURIComponent(document.referrer)
                          : "");
   }
 </script>
 <noscript>
-  <img src="https://stats.ninefiveslabs.io/pixel.png?u={{ .RelPermalink }}" />
+  <img src="https://stats.ninefiveslabs.io/95l.png?u={{ .RelPermalink }}" />
 </noscript>
 {{- partial "footer_custom.html" . }}
