@@ -11,9 +11,9 @@ Link do spotkania: [https://meet.jit.si/NineFivesLabsDevOpsDinner](https://meet.
 
 Do dołączenia nie potrzeba żadnej rejestracji.
 
-| Numer | Data                  | Tytuł                                                            | Kalendarz                                                     | Slajdy                                                                                            | Nagranie       |
+| Numer | Data[^1]              | Tytuł                                                            | Kalendarz                                                     | Slajdy                                                                                            | Nagranie       |
 |-------|-----------------------|------------------------------------------------------------------|---------------------------------------------------------------|---------------------------------------------------------------------------------------------------|----------------|
-| 02    |                       |                                                                  |                                                               |                                                                                                   |                |
-| 01    | 2020-02-06[^1]  19:00 | Jenkins X: godny następca czy ostatnie tchnienie monopolisty     | [.ical](../static/Nine_Fives_Labs_Thursday_DevOps_Dinner.ics) | [Link](https://docs.google.com/presentation/d/1G6HHWb58488DdbqjH6UaXwEF9dvBPqJcEu73rQtXtvs)       | ...            |
+| 02    |                       |                                                                  |                                                               |                                                                                                   |                        |
+| 01    | 2020-02-06 19:00      | Jenkins X: godny następca czy ostatnie tchnienie monopolisty     | [.ical](../static/Nine_Fives_Labs_Thursday_DevOps_Dinner.ics) | [Link](https://docs.google.com/presentation/d/1G6HHWb58488DdbqjH6UaXwEF9dvBPqJcEu73rQtXtvs)       | [Link](https://www.youtube.com/watch?v=wgu3Ikh7I6w)            |
 
 [^1]: Wszystkie daty są w formacie [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates)
