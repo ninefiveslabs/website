@@ -1,3 +1,4 @@
+publishdir = "_out"
 baseurl = "https://ninefiveslabs.io"
 title = "ninefiveslabs"
 theme = "hugo-coder"
