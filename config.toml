@@ -1,6 +1,6 @@
 publishdir = "_out"
 baseurl = "https://ninefiveslabs.io"
-title = "ninefiveslabs"
+title = "Nine Fives Labs"
 theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
@@ -15,23 +15,23 @@ pygmentscodefencesguesssyntax = true
 #disqusShortname = "yourdiscussshortname"
 
 [params]
-    author = "Nine Fives Labs"
-    description = "John Doe's personal website"
-    keywords = "blog,developer,personal"
-    avatarurl = "horrible-nine-fives-labs.jpg"
+    #author = "Nine Fives Labs"
+    description = "Nine Fives Labs' website"
+    keywords = "blog,developer,organization,nonprofit"
+    avatarurl = "/horrible-nine-fives-labs.jpg"
 
     favicon_32 = "/img/favicon-32x32.png"
     favicon_16 = "/img/favicon-16x16.png"
 
-    footercontent = "Enter a text here."
+    #footercontent = "Enter a text here."
 
     hidecredits = false
     hidecopyright = false
 
     rtl = false
 
-    math = true
-    custom_css = ["css/custom.css"]
+    math = false
+    #custom_css = ["css/custom.css"]
 
 # Social links
 [[params.social]]
@@ -51,11 +51,11 @@ pygmentscodefencesguesssyntax = true
     url = "https://twitter.com/ninefiveslabs/"
 
 # Menu links
-[[menu.main]]
-    name = "Blog"
-    weight = 1
-    url  = "/posts/"
-[[menu.main]]
-    name = "About"
-    weight = 2
-    url = "/about/"
+#[[menu.main]]
+#    name = "Blog"
+#    weight = 1
+#    url  = "/posts/"
+#[[menu.main]]
+#    name = "About"
+#    weight = 2
+#    url = "/about/"
