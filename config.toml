@@ -54,12 +54,17 @@ pygmentscodefencesguesssyntax = true
     icon = "fab fa-linkedin-in fa-2x"
     weight = 4
     url = "https://www.linkedin.com/company/nine-fives-labs/"
+[[params.social]]
+    name = "YouTube"
+    icon = "fab fa-youtube fa-2x"
+    weight = 4
+    url = "https://www.youtube.com/channel/UCHj2NLqfEFHr1eNT4lt8g4w"
 
 # Menu links
-#[[menu.main]]
-#    name = "Blog"
-#    weight = 1
-#    url  = "/posts/"
+[[menu.main]]
+    name = "Meetup"
+    weight = 1
+    url  = "/meetup"
 #[[menu.main]]
 #    name = "About"
 #    weight = 2
