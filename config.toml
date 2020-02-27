@@ -69,3 +69,6 @@ pygmentscodefencesguesssyntax = true
 #    name = "About"
 #    weight = 2
 #    url = "/about/"
+
+[outputs]
+  section = ["HTML", "RSS", "Calendar"]
