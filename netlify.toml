@@ -1,6 +1,6 @@
 [build]
     publish = "_out"
-    command = "hugo"
+    command = "hugo --buildFuture"
 
 [context.deploy-preview]
     command = "hugo --buildFuture -b ${DEPLOY_PRIME_URL}"
