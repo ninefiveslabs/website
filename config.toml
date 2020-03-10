@@ -23,10 +23,10 @@ pygmentscodefencesguesssyntax = true
     favicon_32 = "/img/favicon-32x32.png"
     favicon_16 = "/img/favicon-16x16.png"
 
-    #footercontent = "Enter a text here."
+    footercontent = "Except where otherwise noted, content on this site is licensed under a <a href='https://creativecommons.org/licenses/by-sa/4.0/'>Creative Commons Attribution-ShareAlike 4.0 International</a> license."
 
     hidecredits = false
-    hidecopyright = false
+    hidecopyright = true
 
     rtl = false
 
