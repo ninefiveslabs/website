@@ -2,6 +2,8 @@
 title: Online meetup
 url: "/meetup/"
 jitsi_link: https://meet.jit.si/NineFivesLabsDevOpsDinner
+images:
+  - horrible-nine-fives-labs.jpg
 ---
 
 Nasze meetupy to spotkania na temat infrastruktury, automatyzacji, chmur i procesów wytwarzania oprogramowania.
