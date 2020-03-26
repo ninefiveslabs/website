@@ -72,3 +72,6 @@ pygmentscodefencesguesssyntax = true
 
 [outputs]
   section = ["HTML", "RSS", "Calendar"]
+
+[outputFormats.Calendar]
+  protocol = "https://"
