@@ -4,9 +4,11 @@
 
 [context.production.environment]
   HUGO_VERSION = "0.68.3"
+  TZ = "Europe/Warsaw"
 
 [context.deploy-preview]
     command = "hugo --buildFuture -b ${DEPLOY_PRIME_URL}"
 
 [context.deploy-preview.environment]
   HUGO_VERSION = "0.68.3"
+  TZ = "Europe/Warsaw"
