@@ -19,6 +19,7 @@ pygmentscodefencesguesssyntax = true
     description = "Nine Fives Labs' website"
     keywords = "blog,developer,organization,nonprofit"
     avatarurl = "/horrible-nine-fives-labs.jpg"
+    dateFormat = "02/01/2006"
 
     favicon_32 = "/img/favicon-32x32.png"
     favicon_16 = "/img/favicon-16x16.png"
@@ -60,6 +61,10 @@ pygmentscodefencesguesssyntax = true
     name = "Meetup"
     weight = 1
     url  = "/meetup"
+[[menu.main]]
+    name = "Teksty"
+    weight = 1
+    url  = "/posts"
 #[[menu.main]]
 #    name = "About"
 #    weight = 2
