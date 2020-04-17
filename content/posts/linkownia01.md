@@ -1,7 +1,7 @@
 ---
 title: "Linkownia 01"
 slug: "linkownia01"
-date: "2020-04-16T22:34:00+02:00"
+date: "2020-04-18T10:00:00+02:00"
 description: "Przegląd wartościowych linków od Nine Fives Labs"
 tags: [devops, kubernetes, software development]
 ---
