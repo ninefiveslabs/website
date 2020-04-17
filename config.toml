@@ -58,13 +58,13 @@ pygmentscodefencesguesssyntax = true
 
 # Menu links
 [[menu.main]]
-    name = "Meetup"
-    weight = 1
-    url  = "/meetup"
-[[menu.main]]
     name = "Teksty"
     weight = 1
     url  = "/posts"
+[[menu.main]]
+    name = "Meetup"
+    weight = 2
+    url  = "/meetup"
 #[[menu.main]]
 #    name = "About"
 #    weight = 2
