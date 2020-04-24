@@ -11,14 +11,14 @@ Tym razem w piątek zapraszamy do przejrzenia tego, co nas "wzruszyło" w ostatn
 
 ### Paweł: Skazani na Jenkinsa
 
-Link: [medium.com](https://medium.com/@eldermael/the-many-problems-of-jenkins-reloaded-371e2769320c)
+Link: [The Many Problems Of Jenkins, Reloaded](https://medium.com/@eldermael/the-many-problems-of-jenkins-reloaded-371e2769320c)
 
 Dlaczego tak wiele firm kończy z Jenkinsem, mimo że większość ludzi ma go dość? Wróg ale swój, a może znany, a może są jakieś inne powody? Ja mogę tylko dodać do tekstu, że łączę się w bólu.
 
 
 ### Wojtek: 5 sposobów na przekonanie "biznesu" do spłaty długu technologicznego
 
-Link: [understandlegacycode.com](https://understandlegacycode.com/blog/5-arguments-to-make-managers-care-about-technical-debt/)
+Link: [5 arguments to make managers care about technical debt](https://understandlegacycode.com/blog/5-arguments-to-make-managers-care-about-technical-debt/)
 
 Wszystko płonie, a "biznes" chce nowych ficzerów. Kto nigdy nie był w takiej sytuacji?
 
@@ -27,7 +27,7 @@ Powyższe sposoby mogą pomóc w wyjaśnieniu sytuacji osobom nietechnicznym... 
 
 ### Jarek: Czy operator w Kubernetesie to to samo co kontroler?
 
-Link: [octetz.com](https://octetz.com/docs/2019/2019-10-13-controllers-and-operators/)
+Link: [Controllers and Operators](https://octetz.com/docs/2019/2019-10-13-controllers-and-operators/)
 
 Krótka i treściwa notka na temat tego czym różnią się kontrolery od operatorów w Kubernetesie (a może "czy się różnią?"). Autor przekazuje dokładnie tyle informacji, ile potrzeba, by zrozumieć temat, podając jednocześnie sporo haseł odnoszących się do Kubernetesowych koncepcji kontrolowania stanu, które można potem zgłębiać samodzielnie. Nie zabrakło też linku do materiałów teoretycznych na Wikipedii dla bardziej dociekliwych. Plus za przydatne diagramy, chociaż temu o architekturze client-go przydałoby się trochę więcej opisu. Szybkie i wartościowe, jeśi nie znasz jeszcze odpowiedzi na tytułowe pytanie.
 
