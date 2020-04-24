@@ -9,7 +9,7 @@ tags: [devops, kubernetes, software development]
 Weekend to idealna pora na przegląd ciekawych linków z ostatniego tygodnia. Postanowiliśmy podzielić się z Wami znaleziskami, które w ostatnim czasie utkwiły nam w pamięci, tym samym rozpoczynając pierwszą serię wpisów Nine Fives Labs - Linkownię.
 
 Każdy z nas dodał tu coś od siebie i opatrzył drobnym komentarzem tłumaczącym dlaczego właśnie ten link wyróżnił się spośród innych znalezionych w ostatnim czasie. Zaczynamy!
-
+<!--more--> 
 ---
 
 ## Wojtek poleca: Jedna zakładka, by wszystkie odnaleźć...

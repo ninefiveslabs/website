@@ -7,6 +7,7 @@ tags: [devops, kubernetes, software development]
 ---
 
 Tym razem w piątek zapraszamy do przejrzenia tego, co nas "wzruszyło" w ostatnim czasie. Oferujemy mieszankę narzekania, miękkich umiejętności i technicznego doszkalania. Czego chcieć więcej? Jeśli Twoja odpowiedż to: "weekendu" - mamy dobre wieści...
+<!--more--> 
 
 ### Paweł: Skazani na Jenkinsa
 
