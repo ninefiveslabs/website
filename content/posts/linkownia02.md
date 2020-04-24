@@ -3,7 +3,7 @@ title: "Linkownia 02"
 slug: "linkownia02"
 date: "2020-04-24T15:00:00+02:00"
 description: "Przegląd wartościowych linków od Nine Fives Labs [#2]"
-tags: [devops, kubernetes, software development]
+tags: [devops, kubernetes, software development, jenkins]
 ---
 
 Tym razem w piątek zapraszamy do przejrzenia tego, co nas "wzruszyło" w ostatnim czasie. Oferujemy mieszankę narzekania, miękkich umiejętności i technicznego doszkalania. Czego chcieć więcej? Jeśli Twoja odpowiedż to: "weekendu" - mamy dobre wieści...
@@ -13,10 +13,10 @@ Tym razem w piątek zapraszamy do przejrzenia tego, co nas "wzruszyło" w ostatn
 
 Link: [The Many Problems Of Jenkins, Reloaded](https://medium.com/@eldermael/the-many-problems-of-jenkins-reloaded-371e2769320c)
 
-Dlaczego tak wiele firm kończy z Jenkinsem, mimo że większość ludzi ma go dość? Wróg ale swój, a może znany, a może są jakieś inne powody? Ja mogę tylko dodać do tekstu, że łączę się w bólu.
+Dlaczego tak wiele firm kończy używając Jenkinsa, mimo że większość ludzi ma go dość? Wróg ale swój, może wróg znany, a może są jakieś inne powody? Ja mogę tylko dodać do tekstu, że łączę się w bólu.
 
 
-### Wojtek: 5 sposobów na przekonanie "biznesu" do spłaty długu technologicznego
+### Wojtek: Developerzy zawsze spłacają swe długi(?)
 
 Link: [5 arguments to make managers care about technical debt](https://understandlegacycode.com/blog/5-arguments-to-make-managers-care-about-technical-debt/)
 
