@@ -1,5 +1,5 @@
 ---
-title: "Linkownia03"
+title: "Linkownia 03"
 slug: "linkownia03"
 date: 2020-04-30T15:30:00+02:00
 description: "Przegląd wartościowych linków od Nine Fives Labs [#3]"
@@ -10,19 +10,15 @@ Przed "długim weekendem" wielu z nas oprócz odpoczynku może planować wykonan
 
 ### Paweł: Czy da się wysycić basen 65536 adresów ip?
 
-Link: [When GKE Ran Out Of IP Addresses](https://deploy.live/blog/when-gke-ran-out-of-ip-addresses/)
+Link: [When GKE ran out of IP addresses](https://deploy.live/blog/when-gke-ran-out-of-ip-addresses/)
 
 Krótka opowieść o tym jak domyślne wartości zabierają nam nie tyle marzenia, ale adresy ip. Opis incydentu z GKE obdarzony odrobiną matematyki.
 
----
-
 ### Wojtek: Danie główne czy przystawka?
 
-Link: [Why I'm building a side dish?](https://noahbragg.com/blog/why-im-building-a-side-dish/)
+Link: [Why I'm Building a Side Dish (And Maybe You Should Too!)](https://noahbragg.com/blog/why-im-building-a-side-dish/)
 
 Dla wielu osób, które chcą "coś" stworzyć najtrudniejszym pytaniem jest właśnie: "co?". Chyba każdy chciałby zacząć jak Facebook i skończyć jak Facebook (przynajmniej jeśli chodzi o liczbę użytkowników), ale nie oszukujmy się: nie każdemu się to uda. Ciekawym podejściem jest odnalezienie projektu odpowiednio balansującego liczbę potencjalnych odbiorców i wymagany nakład pracy. Oczywiste? Być może dla niektórych tak, ale powyższy artykuł tłumaczy logikę prowadzącą do tych rozważań.
-
----
 
 ### Jarek: AMA z najpopularniejszym nauczycielem AWS na Udemy
 
