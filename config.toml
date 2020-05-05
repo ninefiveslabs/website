@@ -14,6 +14,10 @@ pygmentscodefencesguesssyntax = true
 
 #disqusShortname = "yourdiscussshortname"
 
+[taxonomies]
+    series = "series"
+    tag = "tags"
+
 [params]
     #author = "Nine Fives Labs"
     description = "Nine Fives Labs' website"
