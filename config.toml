@@ -75,3 +75,7 @@ pygmentscodefencesguesssyntax = true
 
 [outputFormats.Calendar]
   protocol = "https://"
+
+[taxonomies]
+  series = "series"
+  tag = "tags"

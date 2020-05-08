@@ -4,6 +4,7 @@ slug: "linkownia02"
 date: "2020-04-24T15:00:00+02:00"
 description: "Przegląd wartościowych linków od Nine Fives Labs [#2]"
 tags: [devops, kubernetes, software development, jenkins]
+series: [linkownia]
 ---
 
 Tym razem w piątek zapraszamy do przejrzenia tego, co nas "wzruszyło" w ostatnim czasie. Oferujemy mieszankę narzekania, miękkich umiejętności i technicznego doszkalania. Czego chcieć więcej? Jeśli Twoja odpowiedż to: "weekendu" - mamy dobre wieści...
