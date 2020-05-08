@@ -13,7 +13,7 @@ Cześć, w dzisiejszym zbiorze linków trochę o związkach kryzysu z otwartym o
 
 [The third wave of open source migration](https://blog.tidelift.com/the-third-wave-of-open-source-migration)
 
-W dobie nadchodzącego kryzysu firmy zaczynają oszczędzać, a najłatwiej zrezygnować z usług, które można zastąpić darmowym, otwartym kodem. Krótki tekst, opowiadający jak poprzednie kryzysy gospodarcze znacznie przyspieszyły pracę w projektach opensource. Wpis jest interesujący mimo niezbyt dużej ilości technikaliów. Może faktycznie będzie to "srebrną podszewką" tych czasów.
+W dobie nadchodzącego kryzysu firmy zaczynają oszczędzać, a najłatwiej zrezygnować z usług, które można zastąpić darmowym, otwartym kodem. Krótki tekst, opowiadający o tym, jak poprzednie kryzysy gospodarcze znacznie przyspieszyły pracę w projektach opensource. Wpis jest interesujący mimo niewielkiej ilości technikaliów. Może faktycznie rozwój otwartych rozwiązań będzie pozytywnym aspektem tych czasów.
 
 ### Wojtek poleca: Od zera do modelu GitOps przy użyciu dużej liczby modnych narzędzi
 
