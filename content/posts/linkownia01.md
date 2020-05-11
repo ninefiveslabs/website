@@ -5,6 +5,7 @@ date: "2020-04-18T10:00:00+02:00"
 description: "Przegląd wartościowych linków od Nine Fives Labs"
 tags: [devops, kubernetes, software development]
 series: [linkownia]
+authors: ["Jarek Łukow"]
 ---
 
 Weekend to idealna pora na przegląd ciekawych linków z ostatniego tygodnia. Postanowiliśmy podzielić się z Wami znaleziskami, które w ostatnim czasie utkwiły nam w pamięci, tym samym rozpoczynając pierwszą serię wpisów Nine Fives Labs - Linkownię.

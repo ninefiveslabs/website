@@ -5,9 +5,11 @@ date: 2020-05-08T15:30:00+02:00
 description: "Przegląd wartościowych linków od Nine Fives Labs [#4]"
 tags: [devops, kubernetes, opensource, gitops]
 series: [linkownia]
+authors: ["Jarek Łukow"]
 ---
 
 Cześć, w dzisiejszym zbiorze linków trochę o związkach kryzysu z otwartym oprogramowaniem, continuous deployment w stylu GitOps i wydajności aplikacji na Kubernetesie. Jeśli przejrzycie wszystko i nadal będzie Wam mało, możecie też sprawdzić inne wpisy z [tej serii]({{< ref "/series/linkownia" >}}).
+<!--more--> 
 
 ### Paweł poleca: Trzecia fala, na szczęście opensource'u.
 
