@@ -1,9 +1,10 @@
 ---
 draft: false
-date: 2020-05-04T01:16:13+02:00
+date: 2020-05-13T10:00:00+02:00
 title: "Przygotowanie środowiska do pracy z AWS"
 slug: "aws-workplace"
 series: ["aws-bootstrap"]
+authors: ["Jarek Łukow"]
 tags: [aws]
 ---
 
