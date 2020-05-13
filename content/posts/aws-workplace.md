@@ -23,6 +23,10 @@ Po drugie, [oficjalna metoda](https://docs.aws.amazon.com/cli/latest/userguide/i
 Po trzecie, wieloetapowe uwierzytelnianie kodem OTP w konsoli wymaga wykonania dość długiej komendy i żonglerki kluczami dostępowymi, co warto trochę zautomatyzować.
 Po zlokalizowaniu problemów do pokonania i przeczytaniu kilku artykułów na ten temat (spis znajdziesz na końcu strony) postanowiłem zebrać najlepsze cechy znalezionych rozwiązań i napisać własny prosty skrypt, który będzie moim codziennym kompanem w pracy z chmurą Amazona.
 
+Na koniec uwaga o bezpieczeństwie: to narzędzie obejmuje tylko dwa aspekty bezpieczeństwa pracy z AWS - szyfrowanie kluczy i uwierzytelnianie MFA.
+W gąszczu skryptów nie zapomnij o innych dobrych praktykach zabezpieczania swoich kont AWS, między innymi regularnej rotacji kluczy i używaniu do pracy kont IAM zamiast root.
+Więcej na ten temat przeczytasz w [oficjalnym przewodniku](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html).
+
 ## Dla niecierpliwych
 
 Klonujemy [repozytorium git ze skryptami](https://github.com/ninefiveslabs/aws-workplace):
@@ -95,12 +99,6 @@ Jednak możliwość skorzystania z linii poleceń i ręcznego wywołania API alb
 Jest to też wygodny sposób na debugowanie istniejących aplikacji.
 A jeśli chcesz dodać jeszcze jeden automatyczny smaczek do tego rozwiązania, możesz połączyć je z czymś w rodzaju [autoenv](https://github.com/inishchith/autoenv) albo [direnv](https://github.com/direnv/direnv).
 Rozważ tylko najpierw aspekty bezpieczeństwa i zabezpieczenie się przez uruchamianiem niezatwierdzonych skryptów.
-
-## Ostatnia uwaga o bezpieczeństwie
-
-To narzędzie obejmuje tylko dwa aspekty bezpieczeństwa pracy z AWS - szyfrowanie kluczy i uwierzytelnianie MFA.
-W gąszczu skryptów nie zapomnij o innych dobrych praktykach zabezpieczania swoich kont AWS, między innymi regularnej rotacji kluczy i używaniu do pracy kont IAM zamiast root.
-Więcej na ten temat przeczytasz w [oficjalnym przewodniku](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
 
 ## Źródła inspiracji
 
