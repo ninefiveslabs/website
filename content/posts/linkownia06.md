@@ -36,5 +36,5 @@ PS Dla porównania możesz rzucić okiem na wcześniejsze projekty realizujące 
 
 [Linux containers in a few lines of code](https://zserge.com/posts/containers/)
 
-Docker wykorzystuje izolację na wielu płaszczyznach, ale czasami ciężko sobie wyobrazić na czym dokładnie ona polega. Jeszcze trudniej zauważyć, że to wszystko... jest już jest dostępne w naszym systemie!
+Docker wykorzystuje izolację na wielu płaszczyznach, ale czasami ciężko sobie wyobrazić na czym dokładnie ona polega. Jeszcze trudniej zauważyć, że to wszystko... jest już dostępne w naszym systemie!
 Ten post przedstawia jak w kilkudziesięciu liniach kodu uruchomić kontener dockerowy `busybox` bez Dockera.
