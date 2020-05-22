@@ -32,7 +32,7 @@ Można więc tworzyć listy w pętli, definiować zmienne i używać schematów 
 Wydaje się, że to świetny pomysł, pod warunkiem, że użytkownicy nie będę nadużywać tej ogromnej siły wyrazu do tworzenia nadmiernie skomplikowanych generatorów.
 PS Dla porównania możesz rzucić okiem na wcześniejsze projekty realizujące podobną koncepcję: [Ballerina]([https://ballerina.io/](https://ballerina.io/)) i [ksonnet]([https://github.com/ksonnet/ksonnet/blob/master/docs/concepts.md](https://github.com/ksonnet/ksonnet/blob/master/docs/concepts.md)) (martwy).
 
-### Wojtek poleca: Od zera do kontenera (według Linuksowego developera)
+### Wojtek poleca: Od zera do kontenera (według linuksowego developera)
 
 [Linux containers in a few lines of code](https://zserge.com/posts/containers/)
 
