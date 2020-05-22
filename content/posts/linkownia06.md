@@ -19,7 +19,7 @@ Czy Twoim zasobom czegoś brakuje? A może potrzebujesz je rozszerzyć na etapie
 
 ### Jarek poleca: Imperatywnie deklaratywnie
 
-[AWS’ cdk8s, a Dev-Friendly Alternative to YAML for Managing Kubernetes Clusters]([https://thenewstack.io/aws-cdk8s-a-dev-friendly-alternative-to-yaml-for-managing-kubernetes-clusters/](https://thenewstack.io/aws-cdk8s-a-dev-friendly-alternative-to-yaml-for-managing-kubernetes-clusters/))
+[AWS’ cdk8s, a Dev-Friendly Alternative to YAML for Managing Kubernetes Clusters](https://thenewstack.io/aws-cdk8s-a-dev-friendly-alternative-to-yaml-for-managing-kubernetes-clusters/)
 
 Wraz z rozwojem automatyzacji w repozytoriach kodu pojawia się coraz więcej linii w plikach YAML i JSON.
 Osoby utrzymujące te zbiory konfiguracji wiedzą, że dość szybko osiąga się poziom, w którym tworzenie plików w formacie czysto tekstowym przestaje być możliwe - mam na myśli podstawianie wielokrotnie tych samej wartości, powtarzalne struktury plików itp.
@@ -29,9 +29,9 @@ Sam wiele razy musiałem diagnozować błędy spowodowane złymi wcięciami w pl
 Swoje rozwiązanie tego problemu proponuje AWS, publikując narzędzie cdk8s (przeznaczone specjalnie dla Kubernetesa, jego starszym bratem jest projekt CDK, który konwertuje hierarchię obiektów języka programowania na manifesty CloudFormation do wdrożeń na chmurę AWS).
 Jest to bibliotekoframework do pisania skryptów, których wynikiem są struktury danych konwertowane potem na mapy w YAMLu.
 Można więc tworzyć listy w pętli, definiować zmienne i używać schematów obiektowych do powtarzalnych elementów.
-Wydaje się, że to świetny pomysł, pod warunkiem, że użytkownicy nie będę nadużywać tej ogromnej siły wyrazu do tworzenia nadmiernie skomplikowanych generatorów.
+Wydaje się, że to świetny pomysł, pod warunkiem, że użytkownicy nie będą nadużywać tej ogromnej siły wyrazu do tworzenia nadmiernie skomplikowanych generatorów.
 
-PS Dla porównania możesz rzucić okiem na wcześniejsze projekty realizujące podobną koncepcję: [Ballerina]([https://ballerina.io/](https://ballerina.io/)) i [ksonnet]([https://github.com/ksonnet/ksonnet/blob/master/docs/concepts.md](https://github.com/ksonnet/ksonnet/blob/master/docs/concepts.md)) (martwy).
+PS Dla porównania możesz rzucić okiem na wcześniejsze projekty realizujące podobną koncepcję: [Ballerina](https://ballerina.io/) i [ksonnet](https://github.com/ksonnet/ksonnet/blob/master/docs/concepts.md) (martwy).
 
 ### Wojtek poleca: Od zera do kontenera (według linuksowego developera)
 
