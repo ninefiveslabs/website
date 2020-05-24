@@ -1,10 +1,10 @@
 ---
 title: "Sidecar czyli mutacje w Kubernetesie"
 slug: "mutating_webhook"
-date: TODO
+date: 2020-05-27T10:00:00+02:00
 description: "Pierwsze kroki w Dynamic Admission Control Kubernetesa"
 tags: [kubernetes, python, dynamic admission control]
-series: [TODO pawel robi rzeczy]
+series: [breaking-kubernetes-network]
 ---
 
 Gdy już wyjdziecie z bunkrów może was zaskoczyć, że mutacja nie jest jeszcze tak powszechna jak zapowiadały gry. 
