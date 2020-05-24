@@ -5,9 +5,11 @@ date: 2020-04-30T15:30:00+02:00
 description: "Przegląd wartościowych linków od Nine Fives Labs [#3]"
 tags: [devops, kubernetes, software development, aws, gcp]
 series: [linkownia]
+authors: ["Wojtek Urbański"]
 ---
 
 Przed "długim weekendem" wielu z nas oprócz odpoczynku może planować wykonanie jakiegoś projektu "na boku" - warto zastanowić się nad tym, jak do tego podejść. A jeśli chcecie do tego wykorzystać Google Kubernetes Engine lub przy okazji doszkolić się z Amazon Web Services, to wszystkie z dzisiejszych linków mogą się wam przydać. Miłego czytania!
+<!--more--> 
 
 ### Paweł: Czy da się wysycić basen 65536 adresów ip?
 
