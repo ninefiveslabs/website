@@ -1,5 +1,5 @@
 ---
-title: "Sidecar czyli mutacje w Kubernetesie"
+title: "Mutacje w Kubernetesie"
 slug: "mutating_webhook"
 date: 2020-05-27T10:00:00+02:00
 description: "Pierwsze kroki w Dynamic Admission Control Kubernetesa"
@@ -7,25 +7,21 @@ tags: [kubernetes, python, dynamic admission control]
 series: [breaking-kubernetes-network]
 ---
 
-Gdy już wyjdziecie z bunkrów może was zaskoczyć, że mutacja nie jest jeszcze tak powszechna jak zapowiadały gry. 
-Nic bardziej mylne, można mutować w Kubernetesie za pomoc Dynamic Admission Control. Przedstawię wam jak dodać sidecar z użyciem Flaska.
+Gdy już wyjdziecie z bunkrów może was zaskoczyć, że mutacje nie są jeszcze tak powszechne jak zapowiadały gry. 
+Nic bardziej mylnego, można mutować w Kubernetesie dzięki Dynamic Admission Control. Przedstawię wam jak dodać sidecar za pomocą Flaska.
 
 [Dynamic Admission Control](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/) 
 w skrócie są to webhooki, które można dodać w czasie runtime. Mamy dwa typy admission webhooks: walidacje (validating 
-admission webhook) i mutacje (mutating admission webhook). Pierwszy weryfikuje nasz requesty, np czy są wszystkie wymagane `label`, albo 
-czy ilość replik jest większa od minimalnej wartość. Drugi typ pozwala na zmiany requestu który potem trafia do etcd, np. może 
-zmienić ilość replik jeśli jest za mała, albo dodać dodatkowy kontener do poda(`sidecar`). Przykładowo sidecarów możemy używać się
+admission webhook) i mutacje (mutating admission webhook). Pierwszy weryfikuje nasz requesty, np. czy są wszystkie wymagane `label`, albo 
+czy ilość replik jest większa od minimalnej wartość. Drugi typ pozwala na zmiany requestu, który potem trafia do etcd, np. może 
+zmienić ilość replik jeśli jest za mała, albo dodać dodatkowy kontener do poda(`sidecar`). Sidecarów używa się
 do monitoringu, zbierania logów czy też sevice meshu. 
-Mamu wiele przykładowych projektów które używają sidecarów jak [Prometheus](https://prometheus.io/), [Fluentd](https://www.fluentd.org/) czy też  [Envoy](https://www.envoyproxy.io/)
-
-<przerysować flow https://kubernetes.io/blog/2019/03/21/a-guide-to-kubernetes-admission-controllers/>
-
+Mamu wiele projektów które używają sidecarów jak [Prometheus](https://prometheus.io/), [Fluentd](https://www.fluentd.org/) czy też  [Envoy](https://www.envoyproxy.io/)
 
 Wymagania: 
  - [kind](https://github.com/kubernetes-sigs/kind).
  - Python 3.8
  - Flask
-
 
 Przy generowaniu certifkatów pójdziemy na skróty i użyjemy skryptów z [tutoriala](https://github.com/morvencao/kube-mutating-webhook-tutorial/tree/master/deployment).
 ```bash
@@ -34,8 +30,9 @@ export CA_BUNDLE=$(kubectl get secrets -o jsonpath="{.items[?(@.metadata.annotat
 cat ./mutate_admission.yaml | ./kube-mutating-webhook-tutorial/deployment/webhook-patch-ca-bundle.sh > ./mutate_admission_ca.yaml 
 ```
 
-Pierwsze zasoby to dość standardowy deployment z serwisem, który przyłącza secret z certyfkatami które były stworzone w 
-startowej komendzie poprzedniego kroku. 
+Pierwsze zasoby to dość standardowy deployment oraz serwis. Do deplymentu zamontowany jest volumen z sekretem stworzonym
+w poprzednim kroku. 
+
 ```yaml
 ---
 apiVersion: apps/v1
@@ -88,12 +85,12 @@ COPY mutate.py mutate.py
 CMD python mutate.py
 ```
 
-Tworzę prosty webook w Pythonie z użyciem Flaska. Funcja `add_side_car_webhook` z dekoratorem `route` z wyznaczoną ścieżką, 
-która potem będzie użyta w definicji zasobu który opis ten webhook w Kuberensie. 
-Na jego podstawie k8s puka do naszego webhook z requestem tworzącym 
-pod, my go odbieramy i odsyłamy zmiany. W odpowiedzi musimy podać wersje api(`apiVersion`), typ(`kind`) oraz request. 
-Wewnątrz requestu dajemy pozwolenie (`allow`) na dalsze jego przetwarzanie przez k8s wraz z uid(`uid`) odebranego request. 
-A przede wszystkim podajemy typ (`patchType`) oraz naszą zmianę (`patch`). 
+Tworzymy prosty webook w Pythonie z użyciem Flaska. Funkcja `add_side_car_webhook` z dekoratorem `route` da nam końcówkę, 
+która potem będzie użyta w definicji jednego z zasobów Kuberenetesa. Na podstawie tej definicji k8s woła nasz webhook z requestem tworzącym 
+pod. Webhook odpowiada wiadomością jakie zmiany chce wprowadzić w bazowy requeście. 
+W odpowiedzi musimy podać wersje api(`apiVersion`), typ(`kind`) oraz odpowiedź(`response`). 
+Wewnątrz odpowiedzi dajemy pozwolenie (`allow`) na dalsze jego przetwarzanie przez k8s wraz z uid(`uid`) odebranego requestu. 
+A przede wszystkim podajemy typ(`patchType`) oraz naszą zmianę(`patch`). 
 Nasza zmiana musi być odpowiednio kodowana, ale aż tak czarną magią nie będziemy się dziś zajmować. 
 
 Jak zmutować naszego poda? Jest to dość proste w `patch` musimy podać: jaką operację(`op`) chcemy wykonać, 
@@ -142,9 +139,9 @@ if __name__ == '__main__':
 
 ```
 
-Teraz musimy wyznaczyć, do którego serwisu i jakiej ścieżki użyć, tworzymy zasób MutatingWebhookConfiguration z takim opisem.
-ClientConfig określa do jakiego serwisu, pod jaką ścieżkę oraz z jakim certyfikatem k8s wyśle request do przetworzenia. 
-`Rules` decydują, które requesty tam trafią, możemy wybierać requesty na podstawie grupy albo wersji api, zasobu, czy też operacji.  
+Teraz musimy wyznaczyć, do którego serwisu i jakiej ścieżki ma używać Kubernetes. Tworzymy zasób MutatingWebhookConfiguration, 
+który definiuje nasz webhook. ClientConfig określa do serwis, ścieżkę oraz certyfikaty jakiego użyje k8s wysyłając requesty do przetworzenia. 
+Pole `Rules` decyduje, które requesty tam trafią. Możemy wybierać requesty na podstawie wersji api, zasobu, czy też operacji.  
 
 ```yaml
 apiVersion: admissionregistration.k8s.io/v1
@@ -180,7 +177,7 @@ Tworzymy zasoby:
 export CA_BUNDLE=$(kubectl get secrets -o jsonpath="{.items[?(@.metadata.annotations['kubernetes\.io/service-account\.name']=='default')].data.ca\.crt}")
 cat ./mutate_admission.yaml | ./kube-mutating-webhook-tutorial/deployment/webhook-patch-ca-bundle.sh > ./mutate_admission_ca.yaml 
 ```
-1. Tworzymy obraz
+1. Budujemy obraz
 ```bash
 docker build . -t mutate
 ```
@@ -192,7 +189,7 @@ kind load docker-image mutate
 ```bash
 kubectl apply -f webhook.yaml
 ```
-4. Tworzymy poteżną konfigurację mutującego webhooka
+4. Tworzymy konfigurację mutującego webhooka
 ```bash
 kubectl apply -f mutate_admission_ca.yaml
 ```
@@ -263,7 +260,7 @@ Events:
 
 ```
 
-Sukces, mamy nasz side car. Dynamic Admission Control w łatwy sposób daje wiele możliwość do dynamicznych zmian. 
+Sukces, mamy nasz side car.
 
 W czym może być pomocny taki sidecar? Postaram się przedstawić w najbliższym czasie. 
 
