@@ -7,16 +7,16 @@ tags: [kubernetes, python, dynamic admission control]
 series: [breaking-kubernetes-network]
 ---
 
-Gdy już wyjdziecie z bunkrów może was zaskoczyć, że mutacje nie są jeszcze tak powszechne jak zapowiadały gry. 
-Nic bardziej mylnego, można mutować w Kubernetesie dzięki Dynamic Admission Control. Przedstawię wam jak dodać sidecar za pomocą Flaska.
+Gdy już wyjdziecie z bunkrów, to może was zaskoczyć, że mutacje nie są jeszcze tak powszechne, jak zapowiadały gry. 
+Ale nic bardziej mylnego, ponieważ, dzięki Dynamic Admission Control, można mutować w Kubernetesie. Przedstawię wam jak dodać sidecar za pomocą Flaska.
 
 [Dynamic Admission Control](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/) 
-w skrócie są to webhooki, które można dodać w czasie runtime. Mamy dwa typy admission webhooks: walidacje (validating 
+to webhooki, które można dodać w czasie runtime. Mamy dwa typy admission webhooks: walidacje (validating 
 admission webhook) i mutacje (mutating admission webhook). Pierwszy weryfikuje nasz requesty, np. czy są wszystkie wymagane `label`, albo 
 czy ilość replik jest większa od minimalnej wartość. Drugi typ pozwala na zmiany requestu, który potem trafia do etcd, np. może 
-zmienić ilość replik jeśli jest za mała, albo dodać dodatkowy kontener do poda(`sidecar`). Sidecarów używa się
-do monitoringu, zbierania logów czy też sevice meshu. 
-Mamu wiele projektów które używają sidecarów jak [Prometheus](https://prometheus.io/), [Fluentd](https://www.fluentd.org/) czy też  [Envoy](https://www.envoyproxy.io/)
+zmienić ilość replik, jeśli jest ona za mała, albo dodać dodatkowy kontener do poda(`sidecar`). Sidecarów używa się
+do monitoringu, zbierania logów czy też service meshu. 
+Istnieje wiele projektów, które wykorzystują sidecary, np. [Prometheus](https://prometheus.io/), [Fluentd](https://www.fluentd.org/) czy też  [Envoy](https://www.envoyproxy.io/)
 
 Wymagania: 
  - [kind](https://github.com/kubernetes-sigs/kind).
@@ -30,7 +30,7 @@ export CA_BUNDLE=$(kubectl get secrets -o jsonpath="{.items[?(@.metadata.annotat
 cat ./mutate_admission.yaml | ./kube-mutating-webhook-tutorial/deployment/webhook-patch-ca-bundle.sh > ./mutate_admission_ca.yaml 
 ```
 
-Pierwsze zasoby to dość standardowy deployment oraz serwis. Do deplymentu zamontowany jest volumen z sekretem stworzonym
+Pierwsze zasoby to dość standardowy deployment oraz serwis. Do deplymentu zamontowano volumen z sekretem stworzonym
 w poprzednim kroku. 
 
 ```yaml
@@ -85,15 +85,15 @@ COPY mutate.py mutate.py
 CMD python mutate.py
 ```
 
-Tworzymy prosty webook w Pythonie z użyciem Flaska. Funkcja `add_side_car_webhook` z dekoratorem `route` da nam końcówkę, 
+Tworzymy prosty webhook w Pythonie z użyciem Flaska. Funkcja `add_side_car_webhook` z dekoratorem `route` da nam końcówkę, 
 która potem będzie użyta w definicji jednego z zasobów Kuberenetesa. Na podstawie tej definicji k8s woła nasz webhook z requestem tworzącym 
-pod. Webhook odpowiada wiadomością jakie zmiany chce wprowadzić w bazowy requeście. 
-W odpowiedzi musimy podać wersje api(`apiVersion`), typ(`kind`) oraz odpowiedź(`response`). 
+pod. Webhook odpowiada wiadomością, jakie zmiany chce wprowadzić w bazowym requeście. 
+W odpowiedzi musimy podać wersję api(`apiVersion`), typ(`kind`) oraz odpowiedź(`response`). 
 Wewnątrz odpowiedzi dajemy pozwolenie (`allow`) na dalsze jego przetwarzanie przez k8s wraz z uid(`uid`) odebranego requestu. 
-A przede wszystkim podajemy typ(`patchType`) oraz naszą zmianę(`patch`). 
+Przede wszystkim podajemy typ(`patchType`) oraz naszą zmianę(`patch`). 
 Nasza zmiana musi być odpowiednio kodowana, ale aż tak czarną magią nie będziemy się dziś zajmować. 
 
-Jak zmutować naszego poda? Jest to dość proste w `patch` musimy podać: jaką operację(`op`) chcemy wykonać, 
+Jak zmutować naszego poda? Jest to dość proste: w `patch` musimy podać jaką operację(`op`) chcemy wykonać, 
 ścieżkę(`path`) oraz wartość(`value`). Chcemy dodać sidecar do konteneru z bazowego requestu, dlatego odczytujemy istniejącą
 zawartość `request_info['request']['object']['spec']['containers']` i dodajemy naszą konfigrurację kontenera.  
 ```python
@@ -139,8 +139,8 @@ if __name__ == '__main__':
 
 ```
 
-Teraz musimy wyznaczyć, do którego serwisu i jakiej ścieżki ma używać Kubernetes. Tworzymy zasób MutatingWebhookConfiguration, 
-który definiuje nasz webhook. ClientConfig określa do serwis, ścieżkę oraz certyfikaty jakiego użyje k8s wysyłając requesty do przetworzenia. 
+Teraz musimy wyznaczyć, którego serwisu i jakiej ścieżki ma używać Kubernetes. Tworzymy zasób MutatingWebhookConfiguration, 
+który definiuje nasz webhook. ClientConfig określa serwis, ścieżkę oraz certyfikaty jakich użyje k8s wysyłając requesty do przetworzenia. 
 Pole `Rules` decyduje, które requesty tam trafią. Możemy wybierać requesty na podstawie wersji api, zasobu, czy też operacji.  
 
 ```yaml
@@ -260,11 +260,11 @@ Events:
 
 ```
 
-Sukces, mamy nasz side car.
+Sukces, mamy nasz sidecar.
 
-W czym może być pomocny taki sidecar? Postaram się przedstawić w najbliższym czasie. 
+A w czym może być pomocny taki sidecar? Postaram się to przedstawić w najbliższym czasie. 
 
-Cały kod znajdziecie pod tym linkiem https://github.com/ninefiveslabs/side_car_mutate
+Cały kod znajdziecie tutaj: https://github.com/ninefiveslabs/side_car_mutate
 
 Linki:
  - https://kind.sigs.k8s.io/
