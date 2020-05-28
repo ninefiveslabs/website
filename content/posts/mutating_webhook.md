@@ -167,32 +167,33 @@ webhooks:
 ```
 
 Tworzymy zasoby:
+
 1. Tworzymy certyfikaty
-```bash
-./webhook-create-signed-cert.sh --service mutate-webhook-svc --namespace default --secret mutate-webhook-secret
-export CA_BUNDLE=$(kubectl get secrets -o jsonpath="{.items[?(@.metadata.annotations['kubernetes\.io/service-account\.name']=='default')].data.ca\.crt}")
-cat ./mutate_admission.yaml | ./kube-mutating-webhook-tutorial/deployment/webhook-patch-ca-bundle.sh > ./mutate_admission_ca.yaml 
-```
-1. Budujemy obraz
-```bash
-docker build . -t mutate
-```
-1. Wypychamy do kinda
-```bash
-kind load docker-image mutate
-```
-1. Tworzymy webhook z serwisem
-```bash
-kubectl apply -f webhook.yaml
-```
-1. Tworzymy konfigurację mutującego webhooka
-```bash
-kubectl apply -f mutate_admission_ca.yaml
-```
-1. Mutujemy busyboxa
-```bash
-kubectl apply -f box.yaml
-```
+    ```bash
+    ./webhook-create-signed-cert.sh --service mutate-webhook-svc --namespace default --secret mutate-webhook-secret
+    export CA_BUNDLE=$(kubectl get secrets -o jsonpath="{.items[?(@.metadata.annotations['kubernetes\.io/service-account\.name']=='default')].data.ca\.crt}")
+    cat ./mutate_admission.yaml | ./kube-mutating-webhook-tutorial/deployment/webhook-patch-ca-bundle.sh > ./mutate_admission_ca.yaml 
+    ```
+2. Budujemy obraz
+    ```bash
+    docker build . -t mutate
+    ```
+3. Wypychamy do kinda
+    ```bash
+    kind load docker-image mutate
+    ```
+4. Tworzymy webhook z serwisem
+    ```bash
+    kubectl apply -f webhook.yaml
+    ```
+5. Tworzymy konfigurację mutującego webhooka
+    ```bash
+    kubectl apply -f mutate_admission_ca.yaml
+    ```
+6. Mutujemy busyboxa
+    ```bash
+    kubectl apply -f box.yaml
+    ```
 
 **Dostajemy pod po mutacji, który posiada sidecar**
 ```bash
