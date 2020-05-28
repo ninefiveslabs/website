@@ -8,22 +8,22 @@ series: [breaking-kubernetes-network]
 ---
 
 Gdy już wyjdziecie z bunkrów, to może was zaskoczyć, że mutacje nie są jeszcze tak powszechne, jak zapowiadały gry. 
-Ale nic bardziej mylnego, ponieważ, dzięki Dynamic Admission Control, można mutować w Kubernetesie. Przedstawię wam jak dodać sidecar za pomocą Flaska.
+Ale nic bardziej mylnego, ponieważ dzięki Dynamic Admission Control można mutować w Kubernetesie. Przedstawię wam jak za pomocą Flaska dodać sidecar do każdego tworzonego poda.
 
 [Dynamic Admission Control](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/) 
 to webhooki, które można dodać w czasie działania klastra. Mamy dwa typy admission webhooks: walidacje (validating 
-admission webhook) i mutacje (mutating admission webhook). Pierwszy weryfikuje nasz requesty, np. czy są wszystkie wymagane `label`, albo 
-czy ilość replik jest większa od minimalnej wartość. Drugi typ pozwala na zmiany requestu, który potem trafia do etcd, np. może 
-zmienić ilość replik, jeśli jest ona za mała, albo dodać dodatkowy kontener do poda (`sidecar`). Sidecarów używa się
+admission webhook) i mutacje (mutating admission webhook). Pierwszy weryfikuje nasze requesty, np. czy są wszystkie wymagane `label`, albo 
+czy liczba replik jest większa od wymaganej minimalnej wartości. Drugi typ pozwala na zmiany requestu, który potem trafia do etcd, np. może 
+zmienić liczbę replik, jeśli jest ona za mała, albo utworzyć wewnątrz poda dodatkowy kontener (`sidecar`). Sidecarów używa się
 do monitoringu, zbierania logów czy też tworzenia service meshu. 
-Istnieje wiele projektów, które wykorzystują sidecary, np. [Prometheus](https://prometheus.io/), [Fluentd](https://www.fluentd.org/) czy też  [Envoy](https://www.envoyproxy.io/)
+Istnieje wiele projektów, które wykorzystują sidecary, np. [Prometheus](https://prometheus.io/), [Fluentd](https://www.fluentd.org/) czy też [Envoy](https://www.envoyproxy.io/).
 
 Wymagania: 
- - [kind](https://github.com/kubernetes-sigs/kind).
+ - [kind](https://github.com/kubernetes-sigs/kind)
  - Python 3.8
  - Flask
 
-Przy generowaniu certifkatów pójdziemy na skróty i użyjemy skryptów z [tutoriala](https://github.com/morvencao/kube-mutating-webhook-tutorial/tree/master/deployment).
+Przy generowaniu certyfikatów pójdziemy na skróty i użyjemy skryptów z [tutoriala](https://github.com/morvencao/kube-mutating-webhook-tutorial/tree/master/deployment).
 ```bash
 ./webhook-create-signed-cert.sh --service mutate-webhook-svc --namespace default --secret mutate-webhook-secret
 export CA_BUNDLE=$(kubectl get secrets -o jsonpath="{.items[?(@.metadata.annotations['kubernetes\.io/service-account\.name']=='default')].data.ca\.crt}")
@@ -94,8 +94,8 @@ Przede wszystkim podajemy typ (`patchType`) oraz naszą zmianę (`patch`).
 Nasza zmiana musi być odpowiednio kodowana, ale aż tak czarną magią nie będziemy się dziś zajmować. 
 
 Jak zmutować naszego poda? Jest to dość proste: w `patch` musimy podać jaką operację (`op`) chcemy wykonać, 
-ścieżkę (`path`) oraz wartość (`value`). Chcemy dodać sidecar do konteneru z bazowego requestu, dlatego odczytujemy istniejącą
-zawartość `request_info['request']['object']['spec']['containers']` i dodajemy naszą konfigrurację kontenera.  
+ścieżkę (`path`) oraz wartość (`value`). Chcemy dodać sidecar do kontenera z bazowego requestu, dlatego odczytujemy istniejącą
+zawartość `request_info['request']['object']['spec']['containers']` i dodajemy naszą konfigurację kontenera.  
 ```python
 import base64
 import jsonpatch
@@ -185,7 +185,7 @@ docker build . -t mutate
 ```bash
 kind load docker-image mutate
 ```
-3. Tworzymy webook z serwisem
+3. Tworzymy webhook z serwisem
 ```bash
 kubectl apply -f webhook.yaml
 ```
