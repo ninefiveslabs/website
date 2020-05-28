@@ -11,6 +11,8 @@ authors: ["Paweł Kopka"]
 Gdy już wyjdziecie z bunkrów, to może was zaskoczyć, że mutacje nie są jeszcze tak powszechne, jak zapowiadały gry. 
 Ale nic bardziej mylnego, ponieważ dzięki Dynamic Admission Control można mutować w Kubernetesie. Przedstawię wam jak za pomocą Flaska dodać sidecar do każdego tworzonego poda.
 
+### Czym jest Dynamic Admisson Control?
+
 [Dynamic Admission Control](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/) 
 to webhooki, które można dodać w czasie działania klastra. Mamy dwa typy admission webhooks: walidacje (validating 
 admission webhook) i mutacje (mutating admission webhook). Pierwszy weryfikuje nasze requesty, np. czy są wszystkie wymagane `label`, albo 
@@ -19,12 +21,16 @@ zmienić liczbę replik, jeśli jest ona za mała, albo utworzyć wewnątrz poda
 do monitoringu, zbierania logów czy też tworzenia service meshu. 
 Istnieje wiele projektów, które wykorzystują sidecary, np. [Prometheus](https://prometheus.io/), [Fluentd](https://www.fluentd.org/) czy też [Envoy](https://www.envoyproxy.io/).
 
-Wymagania: 
+### Wymagania: 
  - [kind](https://github.com/kubernetes-sigs/kind)
  - Python 3.8
  - Flask
 
+### Certyfikaty
+
 Przy generowaniu certyfikatów pójdziemy na skróty i użyjemy [skryptów](https://github.com/morvencao/kube-mutating-webhook-tutorial/blob/master/deployment/webhook-create-signed-cert.sh) z tutoriala.
+
+### Pod z webhookiem
 
 Pierwsze zasoby to dość standardowy deployment oraz serwis. Do deploymentu zamontowano wolumen z sekretem stworzonym
 w poprzednim kroku. 
@@ -81,6 +87,8 @@ COPY mutate.py mutate.py
 CMD python mutate.py
 ```
 
+### Webhook
+
 Tworzymy prosty webhook w Pythonie z użyciem Flaska. Funkcja `add_side_car_webhook` z dekoratorem `route` da nam końcówkę, 
 która potem będzie użyta w definicji jednego z zasobów Kuberenetesa. Na podstawie tej definicji k8s woła nasz webhook z requestem tworzącym 
 pod. Webhook odpowiada wiadomością, jakie zmiany chce wprowadzić w bazowym requeście. 
@@ -135,6 +143,8 @@ if __name__ == '__main__':
 
 ```
 
+### Konfiguracja webhooka 
+
 Teraz musimy wyznaczyć, którego serwisu i jakiej ścieżki ma używać Kubernetes. Tworzymy zasób MutatingWebhookConfiguration, 
 który definiuje nasz webhook. ClientConfig określa serwis, ścieżkę oraz certyfikaty jakich użyje k8s wysyłając requesty do przetworzenia. 
 Pole `Rules` decyduje, które requesty tam trafią. Możemy wybierać requesty na podstawie wersji api, zasobu, czy też operacji.  
@@ -165,6 +175,8 @@ webhooks:
         operations:
           - CREATE
 ```
+
+### Demo
 
 Tworzymy zasoby:
 
@@ -235,6 +247,8 @@ Events:
 ```
 
 Sukces, mamy nasz sidecar.
+
+### Podsumowanie
 
 A w czym może być pomocny taki sidecar? Może na przykład monitorować albo kierować ruchem sieciowy, my zaś użyjemy go symulowania awarii. 
 Co możesz posłużyć to testowania naszej aplikacji na różnego rodzaju fluktuacje sieciowe.
