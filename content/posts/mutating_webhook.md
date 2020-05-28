@@ -5,6 +5,7 @@ date: 2020-05-27T10:00:00+02:00
 description: "Pierwsze kroki w Dynamic Admission Control Kubernetesa"
 tags: [kubernetes, python, dynamic admission control]
 series: [breaking-kubernetes-network]
+authors: ["Paweł Kopka"]
 ---
 
 Gdy już wyjdziecie z bunkrów, to może was zaskoczyć, że mutacje nie są jeszcze tak powszechne, jak zapowiadały gry. 
@@ -23,12 +24,7 @@ Wymagania:
  - Python 3.8
  - Flask
 
-Przy generowaniu certyfikatów pójdziemy na skróty i użyjemy skryptów z [tutoriala](https://github.com/morvencao/kube-mutating-webhook-tutorial/tree/master/deployment).
-```bash
-./webhook-create-signed-cert.sh --service mutate-webhook-svc --namespace default --secret mutate-webhook-secret
-export CA_BUNDLE=$(kubectl get secrets -o jsonpath="{.items[?(@.metadata.annotations['kubernetes\.io/service-account\.name']=='default')].data.ca\.crt}")
-cat ./mutate_admission.yaml | ./kube-mutating-webhook-tutorial/deployment/webhook-patch-ca-bundle.sh > ./mutate_admission_ca.yaml 
-```
+Przy generowaniu certyfikatów pójdziemy na skróty i użyjemy [skryptów](https://github.com/morvencao/kube-mutating-webhook-tutorial/blob/master/deployment/webhook-create-signed-cert.sh) z tutoriala.
 
 Pierwsze zasoby to dość standardowy deployment oraz serwis. Do deploymentu zamontowano wolumen z sekretem stworzonym
 w poprzednim kroku. 
@@ -171,7 +167,7 @@ webhooks:
 ```
 
 Tworzymy zasoby:
-0. Tworzymy certyfikaty
+1. Tworzymy certyfikaty
 ```bash
 ./webhook-create-signed-cert.sh --service mutate-webhook-svc --namespace default --secret mutate-webhook-secret
 export CA_BUNDLE=$(kubectl get secrets -o jsonpath="{.items[?(@.metadata.annotations['kubernetes\.io/service-account\.name']=='default')].data.ca\.crt}")
@@ -181,19 +177,19 @@ cat ./mutate_admission.yaml | ./kube-mutating-webhook-tutorial/deployment/webhoo
 ```bash
 docker build . -t mutate
 ```
-2. Wypychamy do kinda
+1. Wypychamy do kinda
 ```bash
 kind load docker-image mutate
 ```
-3. Tworzymy webhook z serwisem
+1. Tworzymy webhook z serwisem
 ```bash
 kubectl apply -f webhook.yaml
 ```
-4. Tworzymy konfigurację mutującego webhooka
+1. Tworzymy konfigurację mutującego webhooka
 ```bash
 kubectl apply -f mutate_admission_ca.yaml
 ```
-5. Mutujemy busyboxa
+1. Mutujemy busyboxa
 ```bash
 kubectl apply -f box.yaml
 ```
@@ -218,34 +214,11 @@ Containers:
     Container ID:  containerd://e65663fceb302609ea247b7679bdce99d289f533004f5698607dc0dcfac53a7d
     Image:         busybox
     Image ID:      docker.io/library/busybox@sha256:a8cf7ff6367c2afa2a90acd081b484cbded349a7076e7bdf37a05279f276bc12
-    Port:          <none>
-    Host Port:     <none>
-    Command:
-      sleep
-      3600
-    State:          Running
-      Started:      Sat, 09 May 2020 08:20:05 +0200
-    Ready:          True
-    Restart Count:  0
-    Environment:    <none>
-    Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from default-token-h2v64 (ro)
+...
   busybox2:
     Container ID:  containerd://79be7e229ebac9ce5cd22372f9cb34f3a82a4fc5da4e331ee94b7d9379b46369
     Image:         busybox
     Image ID:      docker.io/library/busybox@sha256:a8cf7ff6367c2afa2a90acd081b484cbded349a7076e7bdf37a05279f276bc12
-    Port:          <none>
-    Host Port:     <none>
-    Command:
-      sleep
-      3600
-    State:          Running
-      Started:      Sat, 09 May 2020 08:20:05 +0200
-    Ready:          True
-    Restart Count:  0
-    Environment:    <none>
-    Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from default-token-h2v64 (ro)
 ...
 Events:
   Type    Reason     Age        From                         Message
@@ -262,7 +235,10 @@ Events:
 
 Sukces, mamy nasz sidecar.
 
-A w czym może być pomocny taki sidecar? Postaram się to przedstawić w najbliższym czasie. 
+A w czym może być pomocny taki sidecar? Może na przykład monitorować albo kierować ruchem sieciowy, my zaś użyjemy go symulowania awarii. 
+Co możesz posłużyć to testowania naszej aplikacji na różnego rodzaju fluktuacje sieciowe.
+
+Tekst został sprawdzony przez iKorektor – https://ikorektor.pl 
 
 Cały kod znajdziecie tutaj: https://github.com/ninefiveslabs/side_car_mutate
 
