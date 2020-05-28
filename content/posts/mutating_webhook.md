@@ -250,8 +250,8 @@ Sukces, mamy nasz sidecar.
 
 ### Podsumowanie
 
-A w czym może być pomocny taki sidecar? Może na przykład monitorować albo kierować ruchem sieciowy, my zaś użyjemy go symulowania awarii. 
-Co możesz posłużyć to testowania naszej aplikacji na różnego rodzaju fluktuacje sieciowe.
+A w czym może być pomocny taki sidecar? Może na przykład monitorować albo kierować ruchem sieciowym, my zaś użyjemy go symulowania awarii. 
+Co może posłużyć do testowania naszej aplikacji na wpływ różnego rodzaju fluktuacji sieciowych.
 
 Tekst został sprawdzony przez iKorektor – https://ikorektor.pl 
 
