@@ -16,7 +16,7 @@ Ale nic bardziej mylnego, ponieważ dzięki Dynamic Admission Control można mut
 [Dynamic Admission Control](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/) 
 to webhooki, które można dodać w czasie działania klastra. Mamy dwa typy admission webhooks: walidacje (validating 
 admission webhook) i mutacje (mutating admission webhook). Pierwszy weryfikuje nasze requesty, np. czy są wszystkie wymagane `label`, albo 
-czy liczba replik jest większa od wymaganej minimalnej wartości. Drugi typ pozwala na zmiany requestu, który potem trafia do etcd, np. może 
+czy liczba replik jest większa od wymaganej minimalnej wartości. Drugi typ pozwala na zmiany requestu, który potem trafia z powrotem do api, a potem do etcd, np. może 
 zmienić liczbę replik, jeśli jest ona za mała, albo utworzyć wewnątrz poda dodatkowy kontener (`sidecar`). Sidecarów używa się
 do monitoringu, zbierania logów czy też tworzenia service meshu. 
 Istnieje wiele projektów, które wykorzystują sidecary, np. [Prometheus](https://prometheus.io/), [Fluentd](https://www.fluentd.org/) czy też [Envoy](https://www.envoyproxy.io/).
@@ -250,7 +250,7 @@ Sukces, mamy nasz sidecar.
 
 ### Podsumowanie
 
-A w czym może być pomocny taki sidecar? Może na przykład monitorować albo kierować ruchem sieciowym, my zaś użyjemy go symulowania awarii. 
+A w czym może być pomocny taki sidecar? Może na przykład monitorować albo kierować ruchem sieciowym, my zaś użyjemy go do symulowania awarii. 
 Co może posłużyć do testowania naszej aplikacji na wpływ różnego rodzaju fluktuacji sieciowych.
 
 Tekst został sprawdzony przez iKorektor – https://ikorektor.pl 
