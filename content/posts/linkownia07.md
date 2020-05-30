@@ -31,8 +31,6 @@ Salesforce pokazuje prosty framework do generowania sidecarów w Kubernetesie. P
 Kolejna dawka haseł ze słownika DevOps, tym razem "przesunięcia" testów.  
 Przesunięcie w lewo (shift left) to pogląd, wedle którego należy dążyć do przeprowadzania jak największej liczby testów jak najwcześniej, bo im bliżej powstania tym ich usunięcie jest "tańsze".
 Natomiast przesunięcie w prawo (shift right) podpowiada, żeby jak najszybciej wydawać taki kod, jaki mamy i weryfikować jego jakość już na docelowym środowisku (np. poprzez [automatyczną weryfikację wdrożeń kanarkowych](https://netflixtechblog.com/automated-canary-analysis-at-netflix-with-kayenta-3260bc7acc69)).
-Zespoły stosujące przesunięcie w prawo sprawiają, że takie memy przestają być śmieszne:
-https://i.redd.it/h9ky1isnekyz.png https://paczaizm.pl/content/wp-content/uploads/a-moze-by-tak-testowac-na-produkcji-czarnobyl-elektrownia.jpg
 Które podejście jest lepsze?
 Nie chodzi o to, żeby wybrać jedno z nich za jedyne prawidłowe, ale warto poznać oba koncepty, żeby móc wykorzystać ich wady i zalety podejmując decyzje na temat procesu testowania.
 Najlepiej będzie połączyć obie filozofie, dobierając odpowiednie rodzaje testów do każdej fazy - wtedy korzyści będą podwójne.
