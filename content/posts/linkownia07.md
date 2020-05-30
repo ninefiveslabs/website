@@ -8,7 +8,7 @@ series: [linkownia]
 authors: ["Paweł Kopka"]
 ---
 
-Czy w pod koniec drugie dekadzie XXI wieku nadal potrzebujemy make? Jak często duże firmy korzystają z motorów? Czy jesteś bardziej lewicowy, czy prawicowy, jeśli chodzi o testy? Gdzie jest Wally? Linki z tym tygodni pomogą wam odpowiedzieć na te pytania, no może nie na wszystkie.
+Czy pod koniec drugiej dekady XXI wieku nadal potrzebujemy make? Jak często duże firmy korzystają z motorów? Czy jesteś bardziej lewicowy, czy prawicowy, jeśli chodzi o testy? Gdzie jest Wally? Linki z tego tygodnia pomogą wam odpowiedzieć na te pytania, no... może nie na wszystkie :)
 <!--more-->
 
 ### Wojtek poleca: make na miarę XXI wieku
@@ -16,13 +16,13 @@ Czy w pod koniec drugie dekadzie XXI wieku nadal potrzebujemy make? Jak często 
 [Using make and git diff for a simple and powerful test harness](https://chrismorgan.info/blog/make-and-git-diff-test-harness/)
 
 Co tu dużo mówić, jestem fanatykiem make'a. Pół repozytorium zawalone Makefile'ami najgorsze. Średnio raz w miesiącu ktoś wdepnie w moje wildcardy czy dynamiczne targety i trzeba wyciągać z manuala, bo mają .PHONY na końcu... 
-A tak na poważnie, to make jest nadal świetnym narzędziem, a połączenie go z testami typu "golden master" (porównujących stan ustalony z obecnym) jest sprytne i bardzo użyteczne. Do czego? Zarówno do "normalnego" kodu jak i do programowalnej infrastruktury, np. Terraforma czy Jsonneta. 
+A tak na poważnie, to make jest nadal świetnym narzędziem, a połączenie go z testami typu "golden master" (porównującymi stan ustalony z obecnym) jest sprytne i bardzo użyteczne. Do czego? Zarówno do "normalnego" kodu jak i do programowalnej infrastruktury, np. Terraforma czy Jsonneta. 
 
-### Paweł poleca: Zapraszam do motora
+### Paweł poleca: Zapraszam na motor
 
 [A Generic Sidecar Injector for Kubernetes](https://engineering.salesforce.com/a-generic-sidecar-injector-for-kubernetes-c05eede1f6bb)
 
-Salesforce pokazuje prosty framework do generowania sidecarów w Kubernetesie. Pod linkiem możecie przeczytać krótki wstęp czym są sidacary, oraz jak często taka firma jak Salesforce korzysta z takiego wzorca. Ale głównym celem jest "sprzedanie" frameworka, który zbudowali. Za kilka linii w yamlu dostaniecie jeden kontener gratis do każdego poda, jest to kusząca oferta.
+Salesforce pokazuje prosty framework do generowania sidecarów w Kubernetesie. Pod linkiem możecie przeczytać krótki wstęp czym są sidacary, oraz jak często taka firma jak Salesforce korzysta z tego wzorca. Ale głównym celem jest "sprzedanie" frameworka, który zbudowali. Za kilka linii w yamlu dostaniecie jeden kontener gratis do każdego poda, jest to kusząca oferta.
 
 ### Jarek poleca: Lewicowe i prawicowe spojrzenia na testowanie kodu
 
