@@ -2,7 +2,7 @@
 title: "Linkownia 07"
 slug: "linkownia07"
 date: 2020-05-29T18:00:00+02:00
-description: "Przegląd wartościowych linków od Nine Fives Labs [#6]"
+description: "Przegląd wartościowych linków od Nine Fives Labs [#7]"
 tags: [devops, opensource, kubernetes, kontenery]
 series: [linkownia]
 authors: ["Paweł Kopka"]
