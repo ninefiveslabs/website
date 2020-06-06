@@ -1,7 +1,7 @@
 ---
 title: "Linkownia 08"
 slug: "linkownia-08"
-date: 2020-06-05T18:00:00+02:00
+date: 2020-06-06T15:00:00+02:00
 description: "Przegląd wartościowych linków od Nine Fives Labs [#8]"
 tags: [devops, opensource, gitops, golang, build]
 series: [linkownia]
@@ -9,10 +9,11 @@ authors: ["Wojtek Urbański"]
 ---
 
 Cześć!
-Czerwiec rozpoczynamy kolejną dawką ciekawostek na weekend.
-GitOps nie znika z naszego radaru, bo uważamy, że z waszego też nie powinien.
-Na dokładkę dodamy też informacje o tym, jak zadbać o powtarzalne budowanie aplikacji, nawet jeśli nie jesteśmy ich autorami. 
-A na deser...
+
+Czerwiec rozpoczynamy kolejną porcją ciekawostek na weekend.
+GitOps nie znika z naszego radaru, bo uważamy, że z waszego też nie powinien jeśli chcecie oszczędzić sobie bólu przy pracy z Kubernetesem.
+Na dokładkę dodamy też informacje o tym, jak zabrać się za powtarzalne budowanie aplikacji, nawet jeśli nie jesteśmy ich autorami. 
+A na deser... Pokażemy, czy wytwarzanie oprogramowania dla rakiet to *rocket science*.
 <!--more-->
 
 ### Paweł poleca: Prosty przepis babci Jadzi na GitOps
@@ -33,4 +34,14 @@ W świetle współczesnych języków programowania z systemami do zarządzania z
 masą specjalnych systemów do kontroli wersji pakietów wydaje się, że już nie ma w tym temacie nic do roboty.
 Otóż okazuje się, że także pracując nad budowaniem aplikacji w golangu można się nieźle napocić.
 Autor powyższego posta pokazuje jak rozwiązał zagadkę połączenia golanga z C przy budowaniu LXD.
+
+### Jarek poleca: Continuous deployment na orbicie
+
+[Overview of how SpaceX approaches building their flight software](https://www.reddit.com/r/spacex/comments/7j69ue/overview_of_how_spacex_approaches_building_their/)
+
+Oglądając start misji Dragon Crew Demo-2 zastanawiałem się jak wygląda proces CI/CD w tak krytycznych projektach.
+Zainteresowanie wzrosło kilkukrotnie po tym, jak dowiedziałem się, że Boeing w trakcie testowej misji swojej kapsuły 
+Starliner musiał [zainstalować łatkę oprogramowania w trakcie, gdy ta znajdowała się już na orbicie](https://spaceflightnow.com/2020/02/28/boeing-says-thorough-testing-would-have-caught-starliner-software-problems/).
+Pod linkiem możecie znaleźć prezentację inżynierów SpaceX, którzy opowiadają jak wytwarza się u nich software do rakiet.
+Prezentacja odbyła się dwa lata temu, ale każde uchylenie rąbka tajemnicy jest w tym wypadku cenne.
 
