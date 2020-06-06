@@ -34,3 +34,26 @@ masą specjalnych systemów do kontroli wersji pakietów wydaje się, że już n
 Otóż okazuje się, że także pracując nad budowaniem aplikacji w golangu można się nieźle napocić.
 Autor powyższego posta pokazuje jak rozwiązał zagadkę połączenia golanga z C przy budowaniu LXD.
 
+### Misiek poleca: Continuous Delivery of Ideas
+
+[What Will The Next 10 Years Of Continuous Delivery Look Like?](https://www.youtube.com/watch?v=FVEWdatM8Uk)
+
+Prezentacja prowadzona przez dwóch autorów książki `Continuous Delivery`, w
+której przedstawiają jak technicznie tworzyć proces CI/CD.
+
+W prezentacji Dave Farley i Jez Humble skupiają się na szerszym pojęciu CD -
+coś, czego ich zdaniem zabrakło w książce, którą napisali 10 lat temu.
+
+Roztaczają wizję CD jako ogólnego systemu 'dowożenia' - od idei do gotowego
+produktu, której właściwie nie da się osiągnąć bez kulturalnej zmiany
+organizacji, a w szczególności nastawienia warstwy zarządzającej.
+
+Przedstawiają że trzeba rozróżnić 'Product design' i 'Product delivery' -
+pierwszy to worek pomysłów weryfikowany poprzez zastosowanie metody naukowej,
+a drugi to narzędzia wspomagające ten pierwszy (i o tym jest książka).
+
+Nagranie z konferencji DeliveryConf 2020 - to było w styczniu w Seattle, czyli
+prawie 6 miesięcy temu....
+Zachęcam do zajrzenia do reszty nagrań, bo jest bez typowego wciskania
+marketingowego kitu - [DeliveryConf 2020 playlist](https://www.youtube.com/playlist?list=PLir_MEJB8aJiRUrlU6MFOvUsF2X0lAaQP).
+
