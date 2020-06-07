@@ -15,7 +15,7 @@
 
 [[headers]]
   # Define which paths this specific [[headers]] block will cover.
-  for = "/.well-known/matrix/server"
+  for = "/.well-known/matrix/**"
     [headers.values]
     Access-Control-Allow-Origin = "*"
     Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
