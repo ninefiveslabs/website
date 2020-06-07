@@ -1,3 +1,5 @@
 {
-    "m.homeserver": "matrix.ninefiveslabs.io:443"
+    "m.homeserver": {
+        "base_url": "https://ninefiveslabs.io"
+    }
 }
