@@ -74,6 +74,10 @@ pygmentscodefencesguesssyntax = true
     name = "Kontrybucje"
     weight = 4
     url = "/kontrybucje/"
+[[menu.main]]
+    name = "English"
+    weight = 5
+    url = "/eng/"
 
 [outputs]
   section = ["HTML", "RSS", "Calendar"]
