@@ -14,7 +14,7 @@ Za każdym razem gdy siada się do chmurowego projektu na nowym koncie AWS, chce
 
 Chmura Google podsuwa rozwiązanie (przynajmniej częściowe) w postaci swojego [Cloud Shella](https://cloud.google.com/shell) - darmowego terminala w przeglądarce, w którym można skorzystać z zawsze aktualnych narzędzi konsolowych do pracy z GCP.
 
-~W przypadku AWS nie jest już tak prosto i - choć da się stworzyć podobne narzędzie samemu (np. instancja EC2 z przypisaną odpowiednią rolą IAM) - to będzie to wymagało dodatkowej pracy, a użyte zasoby będą płatne.~
+~~W przypadku AWS nie jest już tak prosto i - choć da się stworzyć podobne narzędzie samemu (np. instancja EC2 z przypisaną odpowiednią rolą IAM) - to będzie to wymagało dodatkowej pracy, a użyte zasoby będą płatne.~~
 
 **Aktualizacja 02.2021:** od grudnia 2020 CloudShell jest dostępny również w AWS (i również jest bezpłatny): https://aws.amazon.com/cloudshell/.
 
