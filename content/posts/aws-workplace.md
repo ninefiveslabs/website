@@ -13,7 +13,11 @@ _To pierwszy wpis z serii o fundamentach AWS. Kolejne będą pojawiały się w [
 Za każdym razem gdy siada się do chmurowego projektu na nowym koncie AWS, chce się wypróbować nowe lub nieznane usługi albo pouczyć się do certyfikatu, pojawia się problem przygotowania i skonfigurowania środowiska pracy.
 
 Chmura Google podsuwa rozwiązanie (przynajmniej częściowe) w postaci swojego [Cloud Shella](https://cloud.google.com/shell) - darmowego terminala w przeglądarce, w którym można skorzystać z zawsze aktualnych narzędzi konsolowych do pracy z GCP.
-W przypadku AWS nie jest już tak prosto i - choć da się stworzyć podobne narzędzie samemu (np. instancja EC2 z przypisaną odpowiednią rolą IAM) - to będzie to wymagało dodatkowej pracy, a użyte zasoby będą płatne.
+
+~W przypadku AWS nie jest już tak prosto i - choć da się stworzyć podobne narzędzie samemu (np. instancja EC2 z przypisaną odpowiednią rolą IAM) - to będzie to wymagało dodatkowej pracy, a użyte zasoby będą płatne.~
+
+**Aktualizacja 02.2021:** od grudnia 2020 CloudShell jest dostępny również w AWS (i również jest bezpłatny): https://aws.amazon.com/cloudshell/.
+
 Dlatego do celów szkoleniowo-testowych zdecydowałem się na pracę z AWS z konsoli laptopa.
 
 W trakcie zbierania informacji na temat tego jak skonfigurować swoje środowisko robocze do AWS trafiłem na kilka rzeczy, które chciałbym zrobić inaczej niż w podstawowej dokumentacji.
